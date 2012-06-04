@@ -8,7 +8,8 @@ from django.db import models
 
 class Vocabulary(models.Model):
     """A facility for creating custom content classification types""" 
-    name = models.CharField(max_length=200, unique=True)
+    machine_name = models.CharField(max_length=50, unique=True)
+    verbose_name = models.CharField(max_length=1024, unique=True)
     description = models.TextField(null=True)
     
     class Meta:
